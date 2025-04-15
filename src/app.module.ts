@@ -9,14 +9,15 @@ import { ProductsModule } from './products/products.module';
 import { CategoryModule } from './category/category.module';
 
 @Module({
-  imports: [CategoryModule,
-ProductsModule,
+  imports: [
+    CategoryModule,
+    ProductsModule,
 
     ConfigModule.forRoot({
       isGlobal: true,
     }),
     AuthModule,
-    MongooseModule.forRoot("mongodb://localhost:27017/ecommerce"),
+    MongooseModule.forRoot('mongodb://localhost:27017/ecommerce'),
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -50,6 +50,9 @@ importers:
       firebase-admin:
         specifier: ^13.2.0
         version: 13.2.0
+      mongodb:
+        specifier: ^6.15.0
+        version: 6.15.0
       mongoose:
         specifier: ^8.13.2
         version: 8.13.2

@@ -7,12 +7,20 @@ import {
 import { AuthService } from './auth.service';
 import { Request } from 'express';
 
+interface RequestWithUser extends Request {
+  user: {
+    sub: string;
+    email?: string;
+    phoneNumber?: string;
+  };
+}
+
 @Injectable()
 export class FirebaseAuthGuard implements CanActivate {
   constructor(private readonly authService: AuthService) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
-    const request = context.switchToHttp().getRequest<Request>();
+    const request = context.switchToHttp().getRequest<RequestWithUser>();
     const token = this.extractTokenFromHeader(request);
 
     if (!token) {

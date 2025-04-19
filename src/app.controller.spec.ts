@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "Hello World!"', () => {
-      expect(appController.getHello()).toBe('Hello World!');
+    it('should return "Craft Bihar API"', () => {
+      expect(appController.healthcheck()).toBe('Craft Bihar API');
     });
   });
 });
